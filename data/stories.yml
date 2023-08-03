@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+
+# sự kiện đặt bàn
+- story: book_table
+  steps:
+  - intent: greetting
+  - action: utter_greeting
+  - intent: book_table
+  - action: utter_book_table
+  - action: utter_provide_date_form

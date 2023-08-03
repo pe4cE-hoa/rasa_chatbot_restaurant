@@ -1,0 +1,87 @@
+version: "3.1"
+
+rules:
+
+- rule:
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule:
+  steps:
+  - intent: greeting
+  - action: utter_greeting
+
+- rule:
+  steps:
+  - intent: book_table
+  - action: utter_book_table
+
+- rule:
+  steps:
+  - intent: available_tables
+  - action: utter_available_tables  
+
+- rule:
+  steps:
+  - intent: identity
+  - action: utter_identity
+
+- rule:
+  steps:
+  - intent: hours
+  - action: utter_hours
+
+- rule:
+  steps:
+  - intent: menu
+  - action: utter_menu
+
+- rule:
+  steps:
+  - intent: contact
+  - action: utter_contact
+
+- rule:
+  steps:
+  - intent: address
+  - action: utter_address
+
+- rule:
+  steps:
+  - intent: positive_feedback
+  - action: utter_positive_feedback
+
+- rule:
+  steps:
+  - intent: negative_feedback
+  - action: utter_negative_feedback
+
+- rule:
+  - intent: suggest
+  - action: utter_suggest
+
+- rule:
+  steps:
+  - intent: sanitation
+  - action: utter_sanitation
+
+- rule:
+  steps:
+  - intent: offers
+  - action: utter_offers
+
+- rule:
+  steps:
+  - intent: recipe_enquiry
+  - action: utter_recipe_enquiry
+
+- rule:
+  steps:
+  - intent: vegan_enquiry
+  - action: utter_vegan_enquiry
+
+- rule:
+  steps:
+  - intent: general
+  - action: utter_general

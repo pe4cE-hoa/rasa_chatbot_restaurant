@@ -1,0 +1,84 @@
+version: "3.1"
+
+intents:
+  - greeting 
+  - book_table
+  - available_tables
+  - goodbye
+  - identity
+  - hours
+  - menu
+  - contact
+  - address
+  - positive_feedback
+  - negative_feedback
+  - suggest
+  - sanitation
+  - offers
+  - recipe_enquiry
+  - vegan_enquiry
+  - general
+
+#responses:
+#  utter_greet:
+#  - text: "Hey! How are you?"
+#
+#  utter_cheer_up:
+#  - text: "Here is something to cheer you up:"
+#    image: "https://i.imgur.com/nGF1K8f.jpg"
+#
+#  utter_did_that_help:
+#  - text: "Did that help you?"
+#
+#  utter_happy:
+#  - text: "Great, carry on!"
+#
+#  utter_goodbye:
+#  - text: "Bye"
+#
+#  utter_iamabot:
+#  - text: "I am a bot, powered by Rasa."
+
+responses:
+  utter_greeting:
+  - text: "Xin chào tôi là Group2 bot! Tôi có thể giúp gì được cho bạn"
+  - text: "Chào mừng quý khách đến với HH Restaurant, tôi có thể giúp gì cho bạn"
+  - text: "Xin chào tôi là Group2 bot!. Tôi có thể hỗ trợ gì cho bạn?"
+
+  utter_goodbye:
+  - text: "Đó là niềm vinh dự của tôi khi phục vụ bạn!"
+  - text: "Hi vọng sẽ sớm được gặp lại bạn!"
+  - text: "Mong sẽ được gặp lại bạn!"
+  - text: "Rất vui được phục vụ quý khách. Chúc quý khách một ngày tốt lành!"
+
+  utter_identity:
+  - text: "Bạn có thể gọi tôi là Group2 bot."
+  - text: "Tôi là Group2 bot!"
+
+  utter_hours:
+  - text: "Chúng tôi mở cửa từ 10am-12am thứ hai đên thứ sáu!"
+  - text: "Nhà hàng mở cửa tè 10-12h sáng thứ 2 đến thứ 6"
+
+  utter_contact:
+  - text: "Bạn có thể liên hệ với chúng tôi tại contact@restaurant.com, số máy bàn của chúng tôi là 8787878787"
+
+  utter_address:
+  - text: "Bạn có thể tìm thấy chúng tôi tại địa chỉ Đâu đó ở Việt Nam"
+
+  utter_sanitation:
+  - text: "Tôi hiểu mối lo ngại của bạn. Dưới đây là các quy trình COVID được WHO khuyến nghị mà chúng tôi tuân theo để đảm bảo an toàn cho khách hàng: "
+    text: "1. Tất cả nhân viên của chúng tôi đều đeo khẩu trang 24/7."
+    text: "2. Tất cả nhân viên của chúng tôi đều được kiểm tra xem có bị sốt và các triệu chứng khác không các triệu chứng hàng ngày."
+    text: "3. Tất cả các bề mặt thường xuyên được vệ sinh."
+    text: "4. Chúng tôi sử dụng bot thân thiện này để giảm thiểu sự gần gũi về thể chất ở mức thấp nhất!"
+
+  utter_general:
+  - text: ":)"
+  - text: "Thật vui khi phục vụ bạn!"
+  - text: "Thật vui khi giúp được bạn!"
+  - text: "được hỗ trợ bạn là niềm vui của tôi!"
+  - text: "Rất vui được phục vụ quý khách"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
