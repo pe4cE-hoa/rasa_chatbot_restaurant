@@ -9,11 +9,16 @@ nlu:
     - Xin chào buổi sáng 
     - Này bạn 
     - Này chatbot 
-    - Tôi cần hỗ trợ Chào bạn 
+    - Tôi cần hỗ trợ 
+    - Chào bạn 
     - Có ai ở đó không 
     - Hú 
     - Bot ơi 
     - Cho tôi hỏi chút
+    - Hi
+    - Hello
+    - Alo
+
 
 - intent: book_table
   examples: |
@@ -28,8 +33,14 @@ nlu:
     - Tôi cần đặt chỗ trước
     - Bạn có thể giúp tôi đặt chỗ không
     - Tôi có thể đặt chỗ trước không
-    - Tôi có thể đặt chỗ trước không?
+    - Tôi có thể đặt bàn trước không?
     - Giúp tôi đặt bàn
+    - Hãy đặt bàn giúp tôi
+    - Tôi cần đặt bàn
+    - Tôi muốn đặt bàn ở nhà hàng của bạn
+    - Bạn hãy đặt bàn cho tôi
+    - Tôi muốn ăn ở nhà hàng của bạn
+    - Đặt trước
 
 - intent: available_tables
   examples: |
@@ -42,7 +53,8 @@ nlu:
     - Còn bàn trống không?
     - Còn chỗ nào không?
     - Tôi muốn biết hiện giờ còn bàn nào không
-    - Tôi có thể biết bạn có bàn nào để tôi đặt không?"
+    - Tôi có thể biết bạn có bàn nào để tôi đặt không?
+    - 
 
 - intent: goodbye
   examples: |
