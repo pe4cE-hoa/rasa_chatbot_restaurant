@@ -2,86 +2,42 @@ version: "3.1"
 
 rules:
 
-- rule:
+- rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule:
+- rule: Activate date form
   steps:
-  - intent: greeting
-  - action: utter_greeting
+  - intent: request_table
+  - action: booking_form
+  - active_loop: booking_form
 
-- rule:
+- rule: Submit date form
+  condition:
+  - active_loop: booking_form
   steps:
-  - intent: book_table
-  - action: utter_book_table
+  - action: booking_form
+  - action: 
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  #- action: utter_ask_email_permisstion:
 
-- rule:
+- rule: Activate name form
   steps:
-  - intent: available_tables
-  - action: utter_available_tables  
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
 
-- rule:
+- rule: Submit name form
+  condition:
+  - active_loop: name_form
   steps:
-  - intent: identity
-  - action: utter_identity
-
-- rule:
-  steps:
-  - intent: hours
-  - action: utter_hours
-
-- rule:
-  steps:
-  - intent: menu
-  - action: utter_menu
-
-- rule:
-  steps:
-  - intent: contact
-  - action: utter_contact
-
-- rule:
-  steps:
-  - intent: address
-  - action: utter_address
-
-- rule:
-  steps:
-  - intent: positive_feedback
-  - action: utter_positive_feedback
-
-- rule:
-  steps:
-  - intent: negative_feedback
-  - action: utter_negative_feedback
-
-- rule:
-  - intent: suggest
-  - action: utter_suggest
-
-- rule:
-  steps:
-  - intent: sanitation
-  - action: utter_sanitation
-
-- rule:
-  steps:
-  - intent: offers
-  - action: utter_offers
-
-- rule:
-  steps:
-  - intent: recipe_enquiry
-  - action: utter_recipe_enquiry
-
-- rule:
-  steps:
-  - intent: vegan_enquiry
-  - action: utter_vegan_enquiry
-
-- rule:
-  steps:
-  - intent: general
-  - action: utter_general
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values

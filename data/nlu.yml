@@ -1,36 +1,43 @@
+version: "3.1"
 nlu:
-
+- intent: request_names
+  examples: |
+    - tôi muốn cho bạn biết tên của tôi
+    - đưa tên
+    - bạn có cần biết tên tôi không
+    - bạn muốn biết tên tôi chứ?
 - intent: greeting
   examples: |
     - Chào
-    - Này 
-    - Xin chào 
-    - Chào buổi sáng 
-    - Xin chào buổi sáng 
-    - Này bạn 
-    - Này chatbot 
-    - Tôi cần hỗ trợ Chào bạn 
-    - Có ai ở đó không 
-    - Hú 
-    - Bot ơi 
+    - Này
+    - Xin chào
+    - Chào buổi sáng
+    - Xin chào buổi sáng
+    - Này bạn
+    - Này chatbot
+    - Tôi cần hỗ trợ Chào bạn
+    - Có ai ở đó không
+    - Hú
+    - Bot ơi
     - Cho tôi hỏi chút
-
-- intent: book_table
+    - xin chào
+- intent: request_table
   examples: |
     - Đặt bàn
     - Tôi có thể đặt bàn không?
     - Tôi muốn đặt bàn
     - Đặt chỗ
     - Tôi muốn đặt chỗ
-    - Tôi có thể đặt chỗ không? 
-    - Bạn có thể giúp tôi đặt bàn không
     - Tôi có thể đặt chỗ không?
+    - Bạn có thể giúp tôi đặt bàn không
     - Tôi cần đặt chỗ trước
     - Bạn có thể giúp tôi đặt chỗ không
     - Tôi có thể đặt chỗ trước không
     - Tôi có thể đặt chỗ trước không?
     - Giúp tôi đặt bàn
-
+    - tôi muốn đặt bàn
+    - đặt bàn
+    - đặt tên
 - intent: available_tables
   examples: |
     - Còn bao nhiêu chỗ ngồi?
@@ -39,11 +46,9 @@ nlu:
     - Còn bàn
     - Còn bàn trống không?
     - Sức chứa của nhà hàng là bao nhiêu
-    - Còn bàn trống không?
     - Còn chỗ nào không?
     - Tôi muốn biết hiện giờ còn bàn nào không
-    - Tôi có thể biết bạn có bàn nào để tôi đặt không?"
-
+    - Tôi có thể biết cửa hàng có bàn nào trống để tôi đặt không?"
 - intent: goodbye
   examples: |
     - Hẹn gặp lại
@@ -56,7 +61,7 @@ nlu:
     - Tôi phải đi bây giờ
     - Cảm ơn, tạm biệt
     - Cảm ơn
-
+    - nguyen
 - intent: identity
   examples: |
     - Tên bạn là gì
@@ -68,7 +73,6 @@ nlu:
     - Bạn có phải là bot không
     - Cho tôi biết tên của bạn được không
     - Tên
-
 - intent: hours
   examples: |
     - Khi nào nhà hàng mở cửa
@@ -84,7 +88,6 @@ nlu:
     - Giờ làm việc của bạn?
     - Tôi có thể đến lúc nào
     - Chúng tôi có thể đến lúc nào
-    
 - intent: menu
   examples: |
     - Tôi muốn gọi món
@@ -96,7 +99,6 @@ nlu:
     - Bạn có những món ăn gì
     - Bạn đang phục vụ món ăn gì?
     - Thực đơn hôm nay có món gì?
-    - Cho tôi xem thực đơn
     - Thực đơn
     - Menu nhà hàng có gì
     - Bạn có gợi ý món ăn nào không
@@ -104,7 +106,6 @@ nlu:
     - Cho tôi xem menu
     - Nhà hàng có món gì ngon
     - Cho tôi món ngon nhất của nhà hàng
-
 - intent: contact
   examples: |
     - Thông tin liên hệ
@@ -121,7 +122,6 @@ nlu:
     - Email của nhà hàng là gì
     - Số điện thoại của nhà hàng
     - Tôi muốn gọi điện trực tiếp
-
 - intent: address
   examples: |
     - Địa điểm ở đâu?
@@ -140,7 +140,6 @@ nlu:
     - Cách để đến nhà hàng
     - Tôi không biết địa chỉ của nhà hàng
     - Tôi chưa từng đến nhà hàng
-
 - intent: positive_feedback
   examples: |
     - Mì thật tuyệt vời
@@ -159,7 +158,6 @@ nlu:
     - Ước gì biết đến nhà hàng sớm hơn
     - Tôi và gia đình rất hài lòng với dịch vụ và đồ ăn ở đây
     - Nơi này thật tuyệt vời
-
 - intent: negative_feedback
   examples: |
     - Món mì này không ngon
@@ -185,7 +183,6 @@ nlu:
     - quá tệ
     - rất tệ
     - đồ ăn kinh tởm
-
 - intent: suggest
   examples: |
     - Bạn đề xuất món gì?
@@ -202,10 +199,8 @@ nlu:
     - hãy cho tôi biết nên gọi món gì
     - hãy cho tôi biết tôi nên mua gì
     - gợi ý cho tôi một món ăn
-    - gợi ý cho tôi một món ăn
     - Tôi không biết nên chọn món nào
     - Khó lựa chọn quá
-
 - intent: sanitation
   examples: |
     - ăn ở đây có thực sự an toàn không?
@@ -218,7 +213,6 @@ nlu:
     - tôi lo lắng về sự sạch sẽ
     - Tôi quan tâm đến vệ sinh thực phẩm
     - Nhà hàng có đảm bảo vệ sinh an toàn thực phẩm không
-
 - intent: offers
   examples: |
     - Bạn có thể cho tôi biết các lựa chọn thân thiện với túi tiền không?
@@ -232,7 +226,6 @@ nlu:
     - bạn có ưu đãi nào không?
     - ưu đãi nào đang diễn ra?
     - giảm giá có sẵn là gì ?
-
 - intent: recipe_enquiry
   examples: |
     - Bạn có thể cho tôi biết thêm về công thức của món ăn này không?
@@ -240,7 +233,6 @@ nlu:
     - nguyên liệu của món ăn này là gì?
     - hãy cho tôi biết công thức
     - Nhà hàng có thể chia sẻ công thức không
-
 - intent: vegan_enquiry
   examples: |
     - Tôi có thể xem lựa chọn thuần chay không?
@@ -252,7 +244,6 @@ nlu:
     - nhà hàng này có thuần chay không
     - nơi này có thuần chay không
     - Nhà hàng có món thuần chay không
-
 - intent: general
   examples: |
     - okay
