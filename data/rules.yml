@@ -1,29 +1,28 @@
 version: "3.1"
 
 rules:
-
+  
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Activate date form
+- rule: Activate booking form
   steps:
-  - intent: request_table
+  - intent: booking_table
   - action: booking_form
   - active_loop: booking_form
 
-- rule: Submit date form
+- rule: Submit booking form
   condition:
   - active_loop: booking_form
   steps:
   - action: booking_form
-  - action: 
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-  #- action: utter_ask_email_permisstion:
+  - action: utter_booking_slots
 
 - rule: Activate name form
   steps:
@@ -41,3 +40,43 @@ rules:
     - requested_slot: null
   - action: utter_submit
   - action: utter_slots_values
+
+- rule: address
+  steps:
+  - intent: address
+  - action: utter_address
+
+- rule: contact
+  steps:
+  - intent: contact
+  - action: utter_contact
+
+- rule: general
+  steps:
+  - intent: general
+  - action: utter_general
+
+- rule: greeting
+  steps:
+  - intent: greeting
+  - action: utter_greeting
+
+- rule: hours
+  steps:
+  - intent: hours
+  - action: utter_hours
+
+- rule: identity
+  steps:
+  - intent: identity
+  - action: utter_identity
+
+- rule: sanitation
+  steps:
+  - intent: sanitation
+  - action: utter_sanitation
+
+- rule: date_picker
+  steps:
+  - intent: date_picker
+  - action: utter_date_picker

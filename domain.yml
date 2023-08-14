@@ -4,41 +4,48 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - address
+- booking_table
 - contact
+- date_picker
 - general
 - goodbye
 - greeting
 - hours
 - identity
 - request_names
-- request_table
+- request_booking_form
 - sanitation
+entities:
+- date_booking
+- time_booking
 forms:
   booking_form:
     required_slots:
-    - first_booking
-    - second_booking
+    - date_booking
+    - time_booking
   name_form:
     required_slots:
     - first_name
     - second_name
 slots:
-  first_booking:
+  date_booking:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_text
-      conditons:
+    - type: from_entity
+      entity: date_booking
+      conditions:
       - active_loop: booking_form
-        requested_slot: first_booking
-  second_booking:
-    type: text
+        requested_slot: date_booking
+  time_booking:
+    type: float
     influence_conversation: true
     mappings:
-    - type: from_text
-      conditons:
+    - type: from_entity
+      entity: time_booking
+      conditions:
       - active_loop: booking_form
-        requested_slot: second_booking
+        requested_slot: time_booking
   first_name:
     type: text
     influence_conversation: true
@@ -56,6 +63,19 @@ slots:
       - active_loop: name_form
         requested_slot: second_name
 responses:
+  utter_date_picker:
+  - custom:
+      blocks:
+      - type: section
+        text:
+          text: 'Make a bet on when the world will end:'
+          type: mrkdwn
+        accessory:
+          type: datepicker
+          initial_date: '2019-05-21'
+          placeholder:
+            type: plain_text
+            text: Select a date
   utter_greeting:
   - text: Xin chào tôi là Group2 bot! Tôi có thể giúp gì được cho bạn
   - text: Chào mừng quý khách đến với HH Restaurant, tôi có thể giúp gì cho bạn
@@ -88,24 +108,26 @@ responses:
   - text: Thật vui khi giúp được bạn!
   - text: được hỗ trợ bạn là niềm vui của tôi!
   - text: Rất vui được phục vụ quý khách
-  utter_ask_first_name:
+  utter_ask_date_booking:
   - text: Vui lòng chọn ngày đặt bàn ?
-  utter_ask_second_name:
+  utter_ask_time_booking:
   - text: Bạn đã chọn ngày {date_booking}, hãy chọn giờ đặt bàn ?
-  utter_slots_booking:
-  - text: Ngày đặt bàn là {date_booking} {hour_booking}!
+  utter_booking_slots:
+  - text: Ngày đặt bàn là {date_booking} vào lúc {time_booking} giờ!
   utter_submit:
   - text: Thành công!
   - text: Đã hoàn thành
-  utter_ask_first_booking:
+  utter_ask_first_name:
   - text: tên của bạn là gì?
-  utter_ask_second_booking:
+  utter_ask_second_name:
   - text: vậy {first_name}, họ của bạn là gì?
   utter_slots_values:
   - text: tôi sẽ nhớ tên bạn là {first_name} {second_name}!
 actions:
+- utter_take_bet
 - utter_submit
 - utter_greeting
 - action_submit_date_form
 - utter_slots_values
-- utter_slots_booking
+- utter_booking_slots
+- validate_booking_form

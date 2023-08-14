@@ -1,5 +1,10 @@
 version: "3.1"
 nlu:
+- intent: date_picker
+  examples: |
+    - tôi cần bảng chọn ngày
+    - bảng chọn ngày
+    - giao diện chọn bảng chọn ngày
 - intent: request_names
   examples: |
     - tôi muốn cho bạn biết tên của tôi
@@ -21,7 +26,7 @@ nlu:
     - Bot ơi
     - Cho tôi hỏi chút
     - xin chào
-- intent: request_table
+- intent: booking_table
   examples: |
     - Đặt bàn
     - Tôi có thể đặt bàn không?
@@ -88,6 +93,8 @@ nlu:
     - Giờ làm việc của bạn?
     - Tôi có thể đến lúc nào
     - Chúng tôi có thể đến lúc nào
+    - ngày mai
+    - mai
 - intent: menu
   examples: |
     - Tôi muốn gọi món
@@ -253,3 +260,20 @@ nlu:
     - tôi ổn
     - cảm ơn
     - ừm
+- intent: inform
+  examples: |
+    - tôi muốn đặt bàn vào [ngày mai](date_booking) lúc [19](time_booking) giờ
+    - tôi có thể đặt bàn [hôm nay](date_booking)
+    - đặt bàn lúc [20](time_booking) cho tôi
+    - nhà hàng bạn còn đặt bàn vào [ngày kia](date_booking) được không
+    - tôi muốn booking lúc [22](time_booking) giờ
+    - tôi có thể đi lúc [23](time_booking) giờ
+    - [ngày mai](date_booking)
+    - [hôm nay](date_booking)
+    - [ngày kia](date_booking)
+    - [19](time_booking)
+    - [20](time_booking)
+    - [21](time_booking)
+    - [22](time_booking)
+    - [23](time_booking)
+    - [18](time_booking)
